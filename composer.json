@@ -1,0 +1,26 @@
+{
+  "name": "sasule/breadcrumb",
+  "description": "Breadcrumbs component for Nette Framework",
+  "keywords": [
+    "nette",
+    "breadcrumbs"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexandr Szöllös",
+      "email": "sasa.szollos@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "nette/application": "^2.4.0",
+    "nette/utils": "^2.4|^2.5",
+    "nette/di": "^2.4"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  }
+}
