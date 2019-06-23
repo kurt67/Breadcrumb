@@ -2,7 +2,6 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item" n:foreach="$breadcrumbLinks as $l">
             <a href="{plink $l[Sasule\Breadcrumb\Breadcrumb::LINK_TARGET], (expand) $l[Sasule\Breadcrumb\Breadcrumb::LINK_PARAMETERS]}">
-                <i class="fas fa-arrow-right mr-2"></i>
                 {$l[Sasule\Breadcrumb\Breadcrumb::LINK_TITLE]}
             </a>
         </li>
