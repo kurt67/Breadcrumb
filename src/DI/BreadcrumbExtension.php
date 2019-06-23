@@ -11,21 +11,16 @@ use Sasule\Breadcrumb\Breadcrumb;
  */
 class BreadcrumbExtension extends CompilerExtension
 {
-    /**
-     * Loads configuration
-     */
-    public function loadConfiguration()
-    {
-        $builder = $this->getContainerBuilder();
-        $config = $this->getConfig();
-
-//        if (empty($config)) {
-//            throw new \UnexpectedValueException("Please configure the Flexibee extensions using the section '{$this->name}:' in your config file.");
-//        }
+	/**
+	 * Loads configuration
+	 */
+	public function loadConfiguration()
+	{
+		$builder = $this->getContainerBuilder();
 
 
-        $builder->addDefinition($this->prefix('sasule.breadcrumb'))
-            ->setFactory(Breadcrumb::class/*, [$this->config['company'], $this->config['url'], $this->config['user'], $this->config['password']]*/)
-            ->setAutowired(true);
-    }
+		$builder->addDefinition($this->prefix('sasule.breadcrumb'))
+			->setFactory(Breadcrumb::class)
+			->setAutowired(true);
+	}
 }

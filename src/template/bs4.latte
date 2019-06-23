@@ -2,23 +2,9 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item" n:foreach="$breadcrumbLinks as $l">
             <a href="{plink $l[Sasule\Breadcrumb\Breadcrumb::LINK_TARGET], (expand) $l[Sasule\Breadcrumb\Breadcrumb::LINK_PARAMETERS]}">
+                <i class="fas fa-arrow-right mr-2"></i>
                 {$l[Sasule\Breadcrumb\Breadcrumb::LINK_TITLE]}
             </a>
-            <i class="icon-angle-right" n:if="!$iterator->isLast()"></i>
         </li>
-        {*        <li class="breadcrumb-item"><a href="#">Library</a></li>*}
-        {*        <li class="breadcrumb-item active" aria-current="page">Data</li>*}
     </ol>
 </nav>
-
-
-{*<ol n:if="count($links) >= 1" class="breadcrumb">*}
-{*    <li n:foreach="$links as $link" n:class="!$link['link']?active">*}
-{*        {if $link['link']}*}
-{*            <a href="{plink $link['link'] (expand) $link['linkArgv']}" title="{$link['title']}">{$link['title']}</a>*}
-{*        {else}*}
-{*            {$link['title']}*}
-{*        {/if}*}
-{*        <i class="icon-angle-right" n:if="!$iterator->isLast()"></i>*}
-{*    </li>*}
-{*</ol>*}
