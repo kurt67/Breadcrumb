@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Sasule\Breadcrumb;
 
@@ -53,7 +54,7 @@ class Breadcrumb extends Control
 	 * @param string $templateFile
 	 * @return $this
 	 */
-	public function setTemplateFile(string $templateFile)
+	public function setTemplateFile(string $templateFile): Breadcrumb
 	{
 		$this->templateFile = $templateFile;
 
@@ -78,7 +79,7 @@ class Breadcrumb extends Control
 	 * @param array $parameters
 	 * @return $this
 	 */
-	public function addLink(string $title, string $target, array $parameters = [])
+	public function addLink(string $title, string $target, array $parameters = []): Breadcrumb
 	{
 		$this->breadcrumbLinks[] = [
 			self::LINK_TITLE => $title,
@@ -95,7 +96,7 @@ class Breadcrumb extends Control
 	 * @param array $parameters
 	 * @return $this
 	 */
-	public function addLinkLocalised(string $title, string $target, array $parameters = [])
+	public function addLinkLocalised(string $title, string $target, array $parameters = []): Breadcrumb
 	{
 		$this->breadcrumbLinks[] = [
 			self::LINK_TITLE => ($this->translator) ? $this->translator->translate($title) : $title,
