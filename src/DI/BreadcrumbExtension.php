@@ -14,7 +14,7 @@ class BreadcrumbExtension extends CompilerExtension
 	/**
 	 * Loads configuration
 	 */
-	public function loadConfiguration()
+	public function loadConfiguration(): void
 	{
 		$builder = $this->getContainerBuilder();
 

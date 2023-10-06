@@ -13,10 +13,10 @@
     }
   ],
   "require": {
-    "php": ">=7.1.0",
-    "nette/nette": "^2.4|^3.0",
-    "nette/application": "^2.4|^3.0",
-    "nette/di": "^2.4|^3.0"
+    "php": "^8.0",
+    "nette/application": "^3.0",
+    "nette/di": "^3.0",
+    "latte/latte": "^3.0"
   },
   "autoload": {
     "classmap": [
