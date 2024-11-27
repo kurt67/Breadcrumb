@@ -14,28 +14,31 @@ use Nette\Localization\Translator;
 class Breadcrumb extends Control
 {
 	const LINK_TITLE = 'title';
-	
+
 	const LINK_TARGET = 'target';
-	
+
 	const LINK_PARAMETERS = 'parameters';
-	
+
 	protected array $breadcrumbLinks = [];
-	
-	protected ?Translator $translator;
-	
+
+	protected ?Translator $translator = null;
+
+
 	/**
 	 * Breadcrumb constructor.
 	 * @param Translator|null $translator
 	 */
-	public function __construct(Translator $translator = null)
+	public function __construct(Translator | null $translator = null)
 	{
-		
+
 		$this->translator = $translator;
-		
+
 	}
-	
+
+
 	protected string $templateFile = __DIR__ . '/template/bs4.latte';
-	
+
+
 	/**
 	 * @param string $templateFile
 	 * @return $this
@@ -43,22 +46,23 @@ class Breadcrumb extends Control
 	public function setTemplateFile(string $templateFile): Breadcrumb
 	{
 		$this->templateFile = $templateFile;
-		
+
 		return $this;
 	}
-	
-	
+
+
 	public function render(): void
 	{
 		/* @var $template Template|\stdClass */
 		$template = clone $this->getTemplate();
 		$template->setFile($this->templateFile);
-		
+
 		$template->breadcrumbLinks = $this->breadcrumbLinks;
-		
+
 		$template->render();
 	}
-	
+
+
 	/**
 	 * @param string $title
 	 * @param string $target
@@ -72,10 +76,11 @@ class Breadcrumb extends Control
 			self::LINK_TARGET     => $target,
 			self::LINK_PARAMETERS => $parameters,
 		];
-		
+
 		return $this;
 	}
-	
+
+
 	/**
 	 * @param string $title
 	 * @param string $target
@@ -89,8 +94,8 @@ class Breadcrumb extends Control
 			self::LINK_TARGET     => $target,
 			self::LINK_PARAMETERS => $parameters,
 		];
-		
+
 		return $this;
 	}
-	
+
 }
