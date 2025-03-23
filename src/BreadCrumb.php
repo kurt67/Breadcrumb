@@ -69,7 +69,7 @@ class Breadcrumb extends Control
 	 * @param array $parameters
 	 * @return $this
 	 */
-	public function addLink(string $title, string $target, array $parameters = []): Breadcrumb
+	public function addLink(string $title, string $target = null, array $parameters = []): Breadcrumb
 	{
 		$this->breadcrumbLinks[] = [
 			self::LINK_TITLE      => $title,
