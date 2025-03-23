@@ -2,7 +2,7 @@
 <nav aria-label="breadcrumb" n:if="count($breadcrumbLinks) > 0">
     <ol class="breadcrumb">
         <li class="breadcrumb-item" n:foreach="$breadcrumbLinks as $l">
-            <a href="{plink $l[Sasule\Breadcrumb\Breadcrumb::LINK_TARGET], (expand) $l[Sasule\Breadcrumb\Breadcrumb::LINK_PARAMETERS]}">
+            <a n:tag-if="$l[Sasule\Breadcrumb\Breadcrumb::LINK_TARGET]" href="{plink $l[Sasule\Breadcrumb\Breadcrumb::LINK_TARGET], (expand) $l[Sasule\Breadcrumb\Breadcrumb::LINK_PARAMETERS]}">
                 {$l[Sasule\Breadcrumb\Breadcrumb::LINK_TITLE]}
             </a>
         </li>
